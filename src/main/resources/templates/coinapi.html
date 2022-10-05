@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tr><th>更新時間:</th><td th:text="${dateTime}"></td></tr>
+            <tr th:each="mycoin,stat:${coins}">
+                <th>#</th><td  th:text="${stat.count}"></td>
+                <th>幣別: </th><td th:text="${mycoin.name}"></td>
+                <th>幣別中文名稱: </th><td th:text="${mycoin.nameTW}"></td>
+                <th>匯率: </th><td th:text="${mycoin.rate}"></td>
+            </tr>
+        </table>
+    </div>
+
+   <div><a th:href="@{/display}">go other</a> </div>
+</body>
+</html>
